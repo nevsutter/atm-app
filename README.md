@@ -1,3 +1,59 @@
+# The ATM App
+
+Author: Nev Sutter
+Developed in: React
+Built with: Yarn
+Tested with: Jest (+jest-fetch-mock) & Enzyme (+@wojtekmaj/enzyme-adapter-react-17)
+
+## Disclaimer 
+
+The guidance for this challenge recommended selecting "the tools/frameworks/
+libraries etc that you know best", but given that I already know that I need
+to update my tech stack, it seemed like this was an ideal opportunity to teach
+myself how to use React. For this reason, I have used 'plain' React, without
+hooks or anything else which may have proved too much of a distraction.
+
+Whether or not this was a wise decision remains to be seen, but at least I can
+honestly say I've enjoyed working on this challenge and learning React as I've
+gone along.
+
+## Notes/Assumptions
+
+- Given that the PIN API always returns the same balance, I decided that the 
+  withdrawls all take place within a single transaction, i.e. all 3 amounts
+  are withdrawn after a single PIN validation.
+
+- For the same reason, the app only allows a single transaction and doesn't
+  reset to the initial state after the transaction completes.
+
+- Being a web app, I'm sure using a textbox for PIN and amount entry would have
+  worked perfecty well, but I liked the idea of recreating the feel of an ATM.
+  This extended to other ATM functionality not included in the challenge, such
+  as locking the user out after 3 incorrect PIN attempts.
+
+- For simplicity, I coded the CashBox class to handle only the 3 denominations
+  of note required by the challenge, but it could easily be extend to handle
+  £50 notes or even allow the value of the note to be specified along with the
+  quantity, when the CashBox is initialised.
+
+- The requirement to give a roughly even number of notes (rather than minimum
+  number of notes) introduces edge conditions where it is possible to run out
+  of some note denominations and be unable to fulfil the request even though 
+  the requested amount could have been fulfilled from all the notes available.
+  This should not happen within the parameters of the challenge but I've tried
+  to tackle some of these conditions and ensured an error is thrown if the 
+  system does become stuck.
+
+- Display messages and amount validation could be extended to enforce multiples
+  of £20, if tens and fives have run out.
+
+- Some tests aren't as complete as I'd like, simply because I haven't (as yet)
+  been able to find the right method of testing the functionality in question. 
+
+# Standard ReadMe information follows...
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

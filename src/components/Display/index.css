@@ -1,0 +1,19 @@
+.display {
+  background-color: #030;
+  text-align: center;
+  color: #0d0;
+  font-size: 1.2rem;
+  border: 0.3rem solid #020;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+.display div {
+  margin: 1rem 0;
+  min-height: 2rem;
+}
+
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
