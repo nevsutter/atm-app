@@ -1,9 +1,9 @@
 # The ATM App
 
-Author: Nev Sutter
-Developed in: React
-Built with: Yarn
-Tested with: Jest (+jest-fetch-mock) & Enzyme (+@wojtekmaj/enzyme-adapter-react-17)
+- Author: Nev Sutter
+- Developed in: React
+- Built with: Yarn
+- Tested with: Jest (+jest-fetch-mock) & Enzyme (+@wojtekmaj/enzyme-adapter-react-17)
 
 ## Disclaimer 
 
