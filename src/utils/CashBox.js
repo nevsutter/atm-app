@@ -147,6 +147,11 @@ export default class CashBox {
       let countedCash = 0;
       let dispensedNotes = [];
 
+      // remember original note counts
+      const numTwenties = this.twenties.quantity;
+      const numTens = this.tens.quantity;
+      const numFives = this.fives.quantity;
+
       // helper method to dispense one note from a bundle
       // if any notes are available and don't exceed desired amount
       const dispenseNote = (bundle) => { 
@@ -175,7 +180,14 @@ export default class CashBox {
         }
 
         if (numDispensed === dispensedNotes.length) {
-          // No notes dispensed this cycle!
+          // No notes dispensed this cycle,
+          // so something has gone wrong.
+          
+          // Reset original quantities
+          this.twenties.quantity = numTwenties;
+          this.tens.quantity = numTens;
+          this.fives.quantity = numFives;
+          
           // Avoid inifite loop
           throw new Error(cashBoxFundsText);
         }
